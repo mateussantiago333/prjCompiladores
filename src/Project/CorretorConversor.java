@@ -59,6 +59,8 @@ public class CorretorConversor {
                         testI[2] = aux.charAt(h + 3) + "";
                         testI[3] = testI[2].toUpperCase();
                     }
+                    for (int g = h + 4; g < aux.length(); g++) {
+                    }
                 } // While
                 else if ((aux.charAt(h) == 'W') && controlIf == 0) {
                     controlW = 1;
