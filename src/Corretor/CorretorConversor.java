@@ -15,7 +15,13 @@ import java.util.ArrayList;
 public class CorretorConversor {
 
     Conversor cv = new Conversor();
-
+    CorretorIf corretorIf = new CorretorIf();
+    CorretorWhile corretorW = new CorretorWhile();
+    CorretorAtribuicao corretorAt = new CorretorAtribuicao();
+    CorretorPrint corretorP = new CorretorPrint();
+    CorretorGets corretorG = new CorretorGets();
+    CorretorOperadores corretorOp = new CorretorOperadores();
+    
     public String correctText(ArrayList text) {
         String text_final = "";
         String aux = "";
