@@ -1,4 +1,6 @@
-package Project;
+package Main;
+
+import View.MainView;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

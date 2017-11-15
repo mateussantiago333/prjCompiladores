@@ -1,4 +1,4 @@
-package Project;
+package View;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -7,6 +7,8 @@ package Project;
  */
 
 
+import Conversor.Conversor;
+import Corretor.CorretorConversor;
 import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
