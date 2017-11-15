@@ -10,5 +10,9 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorIf {
-    
+        public String corrigeIf(String text){
+        String correcao = null;
+        
+        return correcao;
+    }
 }

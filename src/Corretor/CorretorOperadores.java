@@ -10,5 +10,9 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorOperadores {
-    
+        public String corrigeOps(String text){
+        String correcao = null;
+        
+        return correcao;
+    }
 }

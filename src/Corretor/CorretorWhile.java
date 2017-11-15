@@ -10,5 +10,9 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorWhile {
-    
+        public String corrigeWhile(String text){
+        String correcao = null;
+        
+        return correcao;
+    }
 }

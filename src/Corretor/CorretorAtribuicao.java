@@ -10,5 +10,9 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorAtribuicao {
-    
+        public String corrigeAt(String text){
+        String correcao = null;
+        
+        return correcao;
+    }
 }
