@@ -47,7 +47,7 @@ public class Conversor {
                         if ((aux.charAt(g) == 'W')) {
                             controlW = 1;
                             text_final = text_final + "\n    "
-                                    + "while(" + aux.charAt(g + 1) + aux.charAt(g + 2) + aux.charAt(g + 3) + ") " + aux.charAt(g + 4) + "\n";
+                                    + "while(" + aux.charAt(g + 1) + " != " + aux.charAt(g + 3) + ") " + aux.charAt(g + 4) + "\n";
                             contkey++;
                         } //Key Closed
                         else if ((aux.charAt(g) == '}')) {
@@ -78,7 +78,7 @@ public class Conversor {
                 else if ((aux.charAt(h) == 'W') && controlIf == 0) {
                     controlW = 1;
                     text_final = text_final + "// " + text.get(i).toString() + "\n    "
-                            + "while(" + aux.charAt(h + 1) + aux.charAt(h + 2) + aux.charAt(h + 3) + ") " + aux.charAt(h + 4) + "\n";
+                            + "while(" + aux.charAt(h + 1) + " != " + aux.charAt(h + 3) + ") " + aux.charAt(h + 4) + "\n";
                     contkey++;
                 } //Key Closed
                 else if ((aux.charAt(h) == '}') && controlIf == 0) {

@@ -10,7 +10,7 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorIf {
-        public String corrigeIf(String text){
+        public String corrigeIf(String aux,int cont,int linerror){
         String correcao = null;
         
         return correcao;

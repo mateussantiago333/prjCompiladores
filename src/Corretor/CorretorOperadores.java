@@ -10,7 +10,7 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorOperadores {
-        public String corrigeOps(String text){
+        public String corrigeOps(String aux,int cont,int linerror){
         String correcao = null;
         
         return correcao;

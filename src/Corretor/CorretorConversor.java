@@ -73,6 +73,12 @@ public class CorretorConversor {
                     }
                 }//Print
                 else if (aux.charAt(h) == 'P' && controlIf == 0) {
+                    String result = null;
+                     result = corretorP.corrigePrint(aux, h, linerror);
+                     if(result != null){
+                         controlError = 1;
+                         error.add(result);
+                     }
                 }
             }
         }

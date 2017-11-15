@@ -10,7 +10,7 @@ package Corretor;
  * @author Mateus Silva
  */
 public class CorretorWhile {
-        public String corrigeWhile(String text){
+        public String corrigeWhile(String aux,int cont,int linerror){
         String correcao = null;
         
         return correcao;
