@@ -45,6 +45,7 @@ public class CorretorConversor {
         for (i = 0; i < lines.size(); i++) {
             controlIf = 0;
             aux = lines.get(i).toString();
+            int linerror = i + 1;
             
             for (int h = 0; h < aux.length(); h++) {
                 //If
@@ -57,7 +58,12 @@ public class CorretorConversor {
                     auxkey++;
                 } // Get
                  else if ((aux.charAt(h) == 'G') && controlIf == 0) {
-                     
+                     String result = null;
+                     result = corretorG.corrigeGets(aux, h, linerror);
+                     if(result != null){
+                         controlError = 1;
+                         error.add(result);
+                     }
                  } //Atribuição
                 else if ((aux.charAt(h) == '=') && controlIf == 0) { 
                 }//Operação
