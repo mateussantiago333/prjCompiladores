@@ -35,12 +35,17 @@ public class CorretorAtribuicao {
                     } // Identificador não é uma letra 
                     else if (!Character.isLetter(aux.charAt(cont + 1)) && cont + 1 < aux.length()) {
                         correcao = "[ERRO - Linha " + linerror + "] Identificador inválido";
-                    } // Caracter que será atribuido ao identificador está em letra maiuscula
+                    }//Se for diferente de caracter e numero 
+                    else if (!Character.isLetter(aux.charAt(cont + 2)) && !Character.isDigit(aux.charAt(cont + 2))  && cont + 2 < aux.length()) {
+                        correcao = "[ERRO - Linha " + linerror + "] Identificador inválido";
+                    }
+                    // Caracter que será atribuido ao identificador está em letra maiuscula
                     else if (test[3] != null && Character.isLetter(aux.charAt(cont + 2)) && test[3].charAt(0) == aux.charAt(cont + 2)) {
                         correcao = "[ERRO - Linha " + linerror + "] Identificador em letra maiuscula";
                     } else if (aux.length() > 3) {
                         correcao = "[ERRO - Linha " + linerror + "] Foram inseridos mais parâmetos que o permitido";
                     }
+        /////////////////////////////////////////////////////////////////////////
         return correcao;
     }
 }

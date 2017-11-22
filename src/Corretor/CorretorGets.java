@@ -32,6 +32,7 @@ public class CorretorGets {
                     else if (aux.length() > 2) {
                         error = "[ERRO - Linha " + linerror + "] Foram inseridos mais parâmetos que o permitido";
                     }
+                /////////////////////////////////////////////////////////////////////////
         return error;
     }
 }

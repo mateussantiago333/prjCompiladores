@@ -13,11 +13,13 @@ public class CorretorPrint {
         public String corrigePrint(String aux,int cont,int linerror){
         String correcao = null;
         String[] test = new String[4];
+                /////////////////////////////////////////////////////////////////////////
                     //Checa se identificador está em letra maiuscula
                     if (cont + 1 < aux.length() && Character.isLetter(aux.charAt(cont + 1))) {
                         test[0] = aux.charAt(cont + 1) + "";
                         test[1] = test[0].toUpperCase();
                     } 
+                /////////////////////////////////////////////////////////////////////////
                     //Checa se possui todos os parametros
                     if (aux.length() < 2) {
                         correcao = "[ERRO - Linha " + linerror + "] Parametro ausente";
@@ -28,6 +30,7 @@ public class CorretorPrint {
                     else if (aux.length() > 2) {
                         correcao = "[ERRO - Linha " + linerror + "] Foram inseridos mais parâmetos que o permitido";
                     }
+                /////////////////////////////////////////////////////////////////////////
         return correcao;
     }
 }

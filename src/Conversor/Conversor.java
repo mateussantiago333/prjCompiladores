@@ -3,7 +3,7 @@ package Conversor;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
- * and open the template in the editorM.
+ * and open the template in the editor.
  */
 import java.util.ArrayList;
 
@@ -27,7 +27,7 @@ public class Conversor {
                 + "int main() {\n"
                 + "   int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, w, x, y, z;\n"
                 + "   char str[512];    // auxiliar na leitura com G\n";
-        //F
+
         for (i = 0; i < text.size(); i++) {
             temp = text.get(i).toString().replaceAll(" ", "");
             lines.add(temp);
@@ -46,8 +46,13 @@ public class Conversor {
                         // While
                         if ((aux.charAt(g) == 'W')) {
                             controlW = 1;
-                            text_final = text_final + "\n    "
-                                    + "while(" + aux.charAt(g + 1) + " != " + aux.charAt(g + 3) + ") " + aux.charAt(g + 4) + "\n";
+                            if (aux.charAt(g + 2) != '#') {
+                                text_final = text_final + "\n    "
+                                        + "while(" + aux.charAt(g + 1) + aux.charAt(g + 2) + aux.charAt(g + 3) + ") " + aux.charAt(g + 4) + "\n";
+                            } else {
+                                text_final = text_final + "\n    "
+                                        + "while(" + aux.charAt(g + 1) + "!=" + aux.charAt(g + 3) + ") " + aux.charAt(g + 4) + "\n";
+                            }
                             contkey++;
                         } //Key Closed
                         else if ((aux.charAt(g) == '}')) {
@@ -58,7 +63,7 @@ public class Conversor {
                             text_final = text_final
                                     + "\n{\n   gets(str);\n    "
                                     + "sscanf(str, \"%d\", &" + aux.charAt(g + 1) + ");\n }\n";
-                        } //AtribuiçãoS
+                        } //Atribuição
                         else if ((aux.charAt(g) == '=' && (g + 1 < aux.length()))) {
                             text_final = text_final + "\n    "
                                     + aux.charAt(g + 1) + aux.charAt(g) + aux.charAt(g + 2) + ";\n";
@@ -74,22 +79,32 @@ public class Conversor {
                         }
                     }
                     text_final = text_final + "   }\n";
-                } // WhileS
+                    break;
+                } // While
                 else if ((aux.charAt(h) == 'W') && controlIf == 0) {
                     controlW = 1;
-                    text_final = text_final + "// " + text.get(i).toString() + "\n    "
-                            + "while(" + aux.charAt(h + 1) + " != " + aux.charAt(h + 3) + ") " + aux.charAt(h + 4) + "\n";
+                    text_final = text_final + "// " + text.get(i).toString() + "\n    ";
+                    if (aux.charAt(h + 2) != '#') {
+                        text_final = text_final +
+                                "while(" + aux.charAt(h + 1) + aux.charAt(h + 2) + aux.charAt(h + 3) + ") " + aux.charAt(h + 4) + "\n";
+                    } else {
+                        text_final = text_final + "\n    "
+                                + "while(" + aux.charAt(h + 1) + "!=" + aux.charAt(h + 3) + ") " + aux.charAt(h + 4) + "\n";
+                    }
                     contkey++;
+                    break;
                 } //Key Closed
                 else if ((aux.charAt(h) == '}') && controlIf == 0) {
                     text_final = text_final + "  " + aux.charAt(h) + "\n";
                     auxkey++;
+                    break;
                 } //Gets
                 else if ((aux.charAt(h) == 'G') && (Character.isLetter(aux.charAt(h + 1))) && (h + 1 < aux.length()) && controlIf == 0) {
                     text_final = text_final + "   // " + text.get(i).toString()
                             + "\n{\n   gets(str);\n    "
                             + "sscanf(str, \"%d\", &" + aux.charAt(h + 1) + ");\n }\n";
-                } //AtribuiçãoP
+                    break;
+                } //Atribuição
                 else if ((aux.charAt(h) == '=' && (h + 1 < aux.length())) && controlIf == 0) {
                     text_final = text_final + "   // " + text.get(i).toString() + "\n    "
                             + aux.charAt(h + 1) + aux.charAt(h) + aux.charAt(h + 2) + ";\n";
@@ -100,10 +115,12 @@ public class Conversor {
                         text_final = text_final + "    // " + text.get(i).toString() + "\n     "
                                 + aux.charAt(h + 1) + "=" + aux.charAt(h + 2) + aux.charAt(h) + aux.charAt(h + 3) + ";\n";
                     }
+                    break;
                 } //Print
                 else if (aux.charAt(h) == 'P' && controlIf == 0) {
                     text_final = text_final + "    // " + text.get(i).toString() + "\n    "
                             + "printf(\"%d\\n\", " + aux.charAt(h + 1) + ");\n";
+                    break;
                 }
             }
         }
